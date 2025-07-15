@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fusion Scripts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --text: #ffffff;
+      --accent: linear-gradient(90deg, red, orange, yellow, green, cyan, blue, violet);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle, rgba(255,0,255,0.1), transparent), radial-gradient(circle, rgba(0,255,255,0.1), transparent);
+      animation: moveBackground 10s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-10%, -10%); }
+      100% { transform: translate(0, 0); }
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
+      border-bottom: 2px solid #222;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: cyan;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      padding: 3rem;
+    }
+
+    .product {
+      background-color: #111;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      width: 280px;
+      padding: 1rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .product:hover {
+      border-image: var(--accent) 1;
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    .product p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    .btn {
+      margin-top: 1rem;
+      padding: 0.7rem 1.4rem;
+      border: none;
+      background: var(--accent);
+      color: black;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #0f0f0f;
+      font-size: 0.9rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Fusion Scripts</header>
+
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#how">How to Use</a>
+    <a href="#discord">Discord</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <section id="products" class="product-grid">
+    <div class="product">
+      <img src="https://via.placeholder.com/300x160?text=FusionHub" alt="FusionHub" />
+      <h3>FusionHub</h3>
+      <p>Premium FF2 script with aimbot, magnet, and more.</p>
+      <button class="btn" onclick="window.open('https://fusionhub.sellix.io/product/12345')">Buy Now</button>
+    </div>
+
+    <div class="product">
+      <img src="https://via.placeholder.com/300x160?text=DubHub" alt="DubHub" />
+      <h3>DubHub</h3>
+      <p>Elite catching system with UI, sliders, and mobile support.</p>
+      <button class="btn" onclick="window.open('https://fusionhub.sellix.io/product/67890')">Buy Now</button>
+    </div>
+  </section>
+
+  <section id="how" style="padding: 3rem; max-width: 800px; margin: auto;">
+    <h2>How to Use</h2>
+    <p>Click “Buy Now” to purchase the script via Sellix. Your product will be delivered instantly along with a license key if applicable.</p>
+  </section>
+
+  <section id="discord" style="text-align: center; padding: 3rem;">
+    <h2>Need Help?</h2>
+    <p>Join our Discord for support, updates, and community perks.</p>
+    <a class="btn" href="https://discord.gg/YOUR_INVITE" target="_blank">Join Discord</a>
+  </section>
+
+  <section id="faq" style="padding: 3rem; max-width: 800px; margin: auto;">
+    <h2>FAQ</h2>
+    <p><strong>Q:</strong> Are the scripts safe?<br><strong>A:</strong> Yes, fully tested and secured.</p>
+    <p><strong>Q:</strong> Where are updates posted?<br><strong>A:</strong> On Discord and through Sellix email updates.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Fusion Scripts. Powered by Sellix & GitHub Pages.
+  </footer>
+
+</body>
+</html>
